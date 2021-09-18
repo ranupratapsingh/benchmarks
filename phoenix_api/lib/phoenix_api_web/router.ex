@@ -20,9 +20,10 @@ defmodule PhoenixApiWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixApiWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixApiWeb do
+    pipe_through :api
+    get "/benchmarks", BenchmarksController, :index
+  end
 
   # Enables LiveDashboard only for development
   #
