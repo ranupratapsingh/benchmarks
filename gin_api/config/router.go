@@ -1,7 +1,7 @@
 package config
 
 import (
-	"net/http"
+	"gin-api/app/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -12,9 +12,7 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default()
 
 	// Ping test
-	r.GET("/ping", func(c *gin.Context) {
-		c.String(http.StatusOK, "pong")
-	})
+	r.GET("/ping", controllers.Ping)
 
 	return r
 }
