@@ -13,6 +13,7 @@ func SetupRouter() *gin.Engine {
 
 	// Ping test
 	r.GET("/ping", controllers.Ping)
+	r.GET("/api/benchmarks", controllers.BenchmarkIndex)
 
 	return r
 }
